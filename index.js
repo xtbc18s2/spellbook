@@ -9,6 +9,8 @@ const changeHeading = function(ev) {
   document
     .querySelector('#spells')
     .textContent += ' ' + spellName
+
+  f.reset()
 }
 
 form.addEventListener('submit', changeHeading)
