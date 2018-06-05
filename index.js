@@ -8,7 +8,7 @@ const changeHeading = function(ev) {
 
   document
     .querySelector('#spells')
-    .textContent += ' ' + spellName
+    .innerHTML += '<p>' + spellName + '</p>'
 
   f.reset()
 }
