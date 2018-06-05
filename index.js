@@ -1,9 +1,11 @@
-const button = document.querySelector('button')
+const form = document.querySelector('form')
 
-const changeHeading = function() {
+const changeHeading = function(ev) {
+  ev.preventDefault()
+
   document
-    .querySelector('p.special')
+    .querySelector('h1')
     .textContent = 'Ye Olde Spellbook'
 }
 
-button.addEventListener('click', changeHeading)
+form.addEventListener('submit', changeHeading)
