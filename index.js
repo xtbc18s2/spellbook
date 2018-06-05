@@ -7,8 +7,8 @@ const changeHeading = function(ev) {
   const spellName = f.spellName.value
 
   document
-    .querySelector('h1')
-    .textContent = spellName
+    .querySelector('#spells')
+    .textContent += ' ' + spellName
 }
 
 form.addEventListener('submit', changeHeading)
