@@ -2,7 +2,7 @@ const button = document.querySelector('button')
 
 const changeHeading = function() {
   document
-    .querySelector('h1')
+    .querySelector('p.special')
     .textContent = 'Ye Olde Spellbook'
 }
 
