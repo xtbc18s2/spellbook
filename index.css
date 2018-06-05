@@ -1,5 +1,134 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Homemade+Apple|UnifrakturCook:700');
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  background: url(wood.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+img#skull {
+  position: absolute;
+  right: 5vw;
+  top: 5vw;
+  transform: rotate(15deg);
+  width: 25vw;
+}
+
+img#quill {
+  position: absolute;
+  top: calc(30vw + 40px);
+  right: 3vw;
+  width: 20vw;
+}
+
+h1 {
+  font-family: UnifrakturCook, serif;
+  margin-left: 10vw;
+  margin-top: 5vw;
+  margin-bottom: 3vw;
+  color: rgba(255,255,255,0.4);
+  font-size: 8vw;
+}
+
+form {
+  margin-bottom: 1rem;
+  margin-left: 10vw;
+  width: 50vw;
+}
+
+form > div {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+input[type="text"] {
+  flex: 1 1 0px;
+  height: auto;
+  min-width: 0;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: .5rem;
+  border: 1px solid #cacaca;
+  background-color: #fefefe;
+  box-shadow: inset 0 1px 2px rgba(10,10,10,.1);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #0a0a0a;
+  transition: box-shadow .5s,border-color .25s ease-in-out;
+  appearance: none;
+}
+
+input[type="text"]:focus {
+  outline: 0;
+  border: 1px solid #8a8a8a;
+  background-color: #fefefe;
+  box-shadow: 0 0 5px #cacaca;
+}
+
+.buttonWrapper {
+  padding-top: 0;
+  padding-bottom: 0;
+  text-align: center;
+  display: flex;
+  flex: 0 0 auto;
+}
+
+button[type="submit"] {
+  background-color: #F8BE3D;
+  color: #0a0a0a;
+  height: auto;
+  align-self: stretch;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 1rem;
+  margin: 0;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: middle;
+  font-family: inherit;
+  padding: 0 1em;
+  border: 1px solid transparent;
+  transition: background-color .25s ease-out,color .25s ease-out;
+  font-size: .9rem;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #dca936;
+}
+
+main {
+  box-sizing: border-box;
+  background-image: url(parchment.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 50vw;
+  margin-left: 10vw;
+  height: calc(100vh - 18.5vw - 4rem);
+  overflow-y: scroll;
+  font-family: "Homemade Apple", cursive;
+  font-size: 2rem;
+  color: rgba(100, 50, 0, 0.8);
+  padding: 1.5rem 4rem;
+  box-shadow: 1px 1px 15px  rgba(0,0,0,0.4);
+}
+
+ul#spells {
+ list-style: none;
+ padding: 0;
+}
+
+.details {
+  font-size: 0.7em;
+  margin-top: -1rem;
 }
