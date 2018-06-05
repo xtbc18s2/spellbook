@@ -8,19 +8,27 @@
   <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
 </head>
 <body>
+  <img src="skull.png" id="skull" alt="">
+  <img src="quill.png" id="quill" alt="">
+
+
   <h1>Spellbook</h1>
 
   <form>
-    <input
-      type="text"
-      name="spellName"
-      placeholder="Enter a spell name"
-      autofocus
-    >
-    <button type="submit">Add</button>
+    <div>
+      <input
+        type="text"
+        name="spellName"
+        placeholder="Enter a spell name"
+        autofocus
+      >
+      <button type="submit">Add</button>
+    </div>
   </form>
 
-  <ul id="spells"></ul>
+  <main>
+    <ul id="spells"></ul>
+  </main>
 
   <script src="index.js"></script>
 </body>
