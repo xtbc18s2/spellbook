@@ -6,9 +6,8 @@ const changeHeading = function(ev) {
   const f = ev.target
   const spellName = f.spellName.value
 
-  document
-    .querySelector('#spells')
-    .innerHTML += '<p>' + spellName + '</p>'
+  const spellsDiv = document.querySelector('#spells')
+  spellsDiv.innerHTML += `<p>${spellName}</p>`
 
   f.reset()
 }
