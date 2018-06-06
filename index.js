@@ -1,5 +1,13 @@
 const form = document.querySelector('form')
 
+const renderProperty = function(name, value) {
+  const el = document.createElement('span')
+  el.classList.add(name)
+  el.textContent = value
+  el.setAttribute('title', value)
+  return el
+}
+
 const handleSubmit = function(ev) {
   ev.preventDefault()
 
@@ -7,14 +15,8 @@ const handleSubmit = function(ev) {
   const spellName = f.spellName.value
   const level = f.level.value
 
-  const nameSpan = document.createElement('span')
-  nameSpan.classList.add('spellName')
-  nameSpan.textContent = spellName
-  nameSpan.setAttribute('title', spellName)
-
-  const levelSpan = document.createElement('span')
-  levelSpan.classList.add('level')
-  levelSpan.textContent = level
+  const nameSpan = renderProperty('spellName', spellName)
+  const levelSpan = renderProperty('level', level)
 
   const item = document.createElement('li')
   item.classList.add('spell')
