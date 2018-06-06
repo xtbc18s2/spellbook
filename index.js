@@ -11,9 +11,11 @@ const handleSubmit = function(ev) {
 
   const nameSpan = document.createElement('span')
   nameSpan.textContent = spellName
+  nameSpan.classList.add('spellName')
 
   const levelSpan = document.createElement('span')
   levelSpan.textContent = level
+  levelSpan.classList.add('level')
 
   const item = document.createElement('li')
   item.appendChild(nameSpan)
