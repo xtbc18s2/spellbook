@@ -146,6 +146,10 @@ input.small {
 
 .spellName {
   text-decoration: underline;
+  max-width: 80%;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  padding-left: 0.1em;
 }
 .level {
   color: cornflowerblue;
