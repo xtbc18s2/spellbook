@@ -144,7 +144,7 @@ input.small {
   justify-content: space-between;
 }
 
-.spellName {
+.spell .name {
   text-decoration: underline;
   max-width: 80%;
   overflow-x: hidden;
