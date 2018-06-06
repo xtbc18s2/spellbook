@@ -5,9 +5,12 @@ const changeHeading = function(ev) {
 
   const f = ev.target
   const spellName = f.spellName.value
+  const level = f.level.value
 
   const spellsDiv = document.querySelector('#spells')
-  spellsDiv.innerHTML += `<li>${spellName}</li>`
+  spellsDiv.innerHTML += `
+    <li>${spellName}, lvl ${level}</li>
+  `
 
   f.reset()
 }
