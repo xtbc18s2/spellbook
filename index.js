@@ -9,7 +9,10 @@ const changeHeading = function(ev) {
 
   const spellsDiv = document.querySelector('#spells')
   spellsDiv.innerHTML += `
-    <li>${spellName}, lvl ${level}</li>
+    <li>
+      <span class="spellName">${spellName}</span>,
+      <span class="level">lvl ${level}</span>
+    </li>
   `
 
   f.reset()
