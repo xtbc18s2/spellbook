@@ -18,6 +18,7 @@ const handleSubmit = function(ev) {
   levelSpan.classList.add('level')
 
   const item = document.createElement('li')
+  item.classList.add('spell')
   item.appendChild(nameSpan)
   item.appendChild(levelSpan)
 

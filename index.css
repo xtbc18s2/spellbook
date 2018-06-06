@@ -139,6 +139,11 @@ input.small {
   flex-grow: 1;
 }
 
+.spell {
+  display: flex;
+  justify-content: space-between;
+}
+
 .spellName {
   text-decoration: underline;
 }
