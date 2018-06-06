@@ -8,9 +8,11 @@ const handleSubmit = function(ev) {
   const level = f.level.value
 
   const nameSpan = document.createElement('span')
+  nameSpan.classList.add('spellName')
   nameSpan.textContent = spellName
 
   const levelSpan = document.createElement('span')
+  levelSpan.classList.add('level')
   levelSpan.textContent = level
 
   const item = document.createElement('li')
