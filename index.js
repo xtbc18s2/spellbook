@@ -16,6 +16,7 @@ const handleSubmit = function(ev) {
   levelSpan.textContent = level
 
   const item = document.createElement('li')
+  item.classList.add('spell')
   item.appendChild(nameSpan)
   item.appendChild(levelSpan)
 
