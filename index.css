@@ -146,6 +146,11 @@ input.small {
 
 .spellName {
   text-decoration: underline;
+  width: 80%;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  padding-left: 0.1em;
+  white-space: nowrap;
 }
 
 .level {
