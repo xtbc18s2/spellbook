@@ -20,7 +20,9 @@ class App {
     const spellArray = JSON.parse(spellJSON)
 
     // Load the spells back into the app
-    spellArray.forEach(this.addSpell.bind(this))
+    if (spellArray) {
+      spellArray.forEach(this.addSpell.bind(this))
+    }
   }
 
   renderProperty(name, value) {
