@@ -1,5 +1,5 @@
-const app = {
-  init: function() {
+class App {
+  constructor() {
     this.spells = []
     this.template = document.querySelector('.spell.template')
     this.list = document.querySelector('#spells')
@@ -8,22 +8,22 @@ const app = {
     form.addEventListener('submit', ev => {
       this.handleSubmit(ev)
     })
-  },
+  }
 
-  renderProperty: function(name, value) {
+  renderProperty(name, value) {
     const el = document.createElement('span')
     el.textContent = value
     el.classList.add(name)
     el.setAttribute('title', value)
     return el
-  },
+  }
 
-  renderItem: function(spell) {
+  renderItem(spell) {
     const item = this.template.cloneNode(true)
     item.classList.remove('template')
 
     // ['name', 'level', etc.]
-    properties = Object.keys(spell)
+    const properties = Object.keys(spell)
 
     // Replace the appropriate values in each <span>
     properties.forEach(property => {
@@ -68,9 +68,9 @@ const app = {
 
 
     return item
-  },
+  }
 
-  moveDown: function(spell, ev) {
+  moveDown(spell, ev) {
     // Find the <li>
     const button = ev.target
     const item = button.closest('.spell')
@@ -88,9 +88,9 @@ const app = {
       // Move it on the page
       this.list.insertBefore(item.nextSibling, item)
     }
-  },
+  }
 
-  moveUp: function(spell, ev) {
+  moveUp(spell, ev) {
     // Find the <li>
     const button = ev.target
     const item = button.closest('.spell')
@@ -108,9 +108,9 @@ const app = {
       // Move it on the page
       this.list.insertBefore(item, item.previousSibling)
     }
-  },
+  }
 
-  removeSpell: function(spell, ev) {
+  removeSpell(spell, ev) {
     // Remove from the DOM
     const button = ev.target
     const item = button.closest('.spell')
@@ -119,15 +119,15 @@ const app = {
     // Remove from the array
     const i = this.spells.indexOf(spell)
     this.spells.splice(i, 1)
-  },
+  }
 
-  toggleFavorite: function(spell, ev) {
+  toggleFavorite(spell, ev) {
     const button = ev.target
     const item = button.closest('.spell')
     spell.favorite = item.classList.toggle('fav')
-  },
+  }
 
-  handleSubmit: function(ev) {
+  handleSubmit(ev) {
     ev.preventDefault()
 
     const f = ev.target
@@ -144,7 +144,7 @@ const app = {
 
     f.reset()
     f.spellName.focus()
-  },
+  }
 }
 
-app.init()
+const app = new App()
