@@ -1,5 +1,5 @@
-const app = {
-  init: function() {
+class App {
+  constructor() {
     this.spells = []
     this.template = document.querySelector('.spell.template')
     this.list = document.querySelector('#spells')
@@ -9,17 +9,17 @@ const app = {
       ev.preventDefault()
       this.handleSubmit(ev)
     })
-  },
+  }
 
-  renderProperty: function(name, value) {
+  renderProperty(name, value) {
     const el = document.createElement('span')
     el.classList.add(name)
     el.textContent = value
     el.setAttribute('title', value)
     return el
-  },
+  }
 
-  renderItem: function(spell) {
+  renderItem(spell) {
     const item = this.template.cloneNode(true)
     item.classList.remove('template')
 
@@ -67,9 +67,9 @@ const app = {
       )
 
     return item
-  },
+  }
 
-  moveDown: function(spell, ev) {
+  moveDown(spell, ev) {
     // Find the <li>
     const button = ev.target
     const item = button.closest('.spell')
@@ -87,9 +87,9 @@ const app = {
       this.spells[i + 1] = spell
       this.spells[i] = nextSpell
     }
-  },
+  }
 
-  moveUp: function(spell, ev) {
+  moveUp(spell, ev) {
     // Find the <li>
     const button = ev.target
     const item = button.closest('.spell')
@@ -107,15 +107,15 @@ const app = {
     this.spells[i - 1] = spell
     this.spells[i] = previousSpell
     }
-  },
+  }
 
-  toggleFavorite: function(spell, ev) {
+  toggleFavorite(spell, ev) {
     const button = ev.target
     const item = button.closest('.spell')
     spell.favorite = item.classList.toggle('fav')
-  },
+  }
 
-  removeSpell: function(spell, ev) {
+  removeSpell(spell, ev) {
     // Remove from the DOM
     const button = ev.target
     const item = button.closest('.spell')
@@ -124,9 +124,9 @@ const app = {
     // Remove from the array
     const i = this.spells.indexOf(spell)
     this.spells.splice(i, 1)
-  },
+  }
 
-  handleSubmit: function(ev) {
+  handleSubmit(ev) {
     const f = ev.target
 
     const spell = {
@@ -142,7 +142,7 @@ const app = {
 
     f.reset()
     f.spellName.focus()
-  },
+  }
 }
 
-app.init()
+const app = new App()
