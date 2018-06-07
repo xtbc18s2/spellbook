@@ -170,3 +170,7 @@ button.fav {
 .template {
   display: none;
 }
+
+.spell.fav {
+  background-color: goldenrod;
+}
