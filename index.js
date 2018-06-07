@@ -39,6 +39,9 @@ const app = {
         this.removeSpell.bind(this, spell)
       )
 
+    // fav button
+
+
     return item
   },
 
