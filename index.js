@@ -1,6 +1,7 @@
 const app = {
   init: function() {
     this.spells = []
+    this.template = document.querySelector('.spell.template')
 
     const form = document.querySelector('form')
     form.addEventListener('submit', (ev) => {
@@ -18,32 +19,25 @@ const app = {
   },
 
   renderItem: function(spell) {
+    const item = this.template.cloneNode(true)
+    item.classList.remove('template')
+
     // ['name', 'level']
     const properties = Object.keys(spell)
 
-    // collect an array of <span> elements
-    const childElements = properties.map((prop) => {
-      return this.renderProperty(prop, spell[prop])
-    })
-
-    const item = document.createElement('li')
-    item.classList.add('spell')
-
-    // append each <span> to the <li>
-    childElements.forEach(function(el) {
-      item.appendChild(el)
+    properties.forEach(property => {
+      const el = item.querySelector(`.${property}`)
+      el.textContent = spell[property]
+      el.setAttribute('title', spell[property])
     })
 
     // add the delete button
-    const deleteButton = document.createElement('button')
-    deleteButton.classList.add('delete')
-    deleteButton.textContent = 'del'
-    deleteButton.addEventListener(
-      'click',
-      this.removeSpell.bind(this, spell)
-    )
-
-    item.appendChild(deleteButton)
+    item
+      .querySelector('button.delete')
+      .addEventListener(
+        'click',
+        this.removeSpell.bind(this, spell)
+      )
 
     return item
   },
@@ -75,6 +69,7 @@ const app = {
     list.appendChild(item)
 
     f.reset()
+    f.spellName.focus()
   },
 }
 

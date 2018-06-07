@@ -161,3 +161,7 @@ button.delete {
   background-color: #ff3333;
   color: white;
 }
+
+.template {
+  display: none;
+}
