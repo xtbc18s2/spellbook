@@ -58,7 +58,35 @@ const app = {
         this.moveUp.bind(this, spell)
       )
 
+    // move down
+    item
+      .querySelector('button.down')
+      .addEventListener(
+        'click',
+        this.moveDown.bind(this, spell)
+      )
+
     return item
+  },
+
+  moveDown: function(spell, ev) {
+    // Find the <li>
+    const button = ev.target
+    const item = button.closest('.spell')
+
+    // Find it in the array
+    const i = this.spells.indexOf(spell)
+
+    // Only move it if it's not already last
+    if (i < this.spells.length - 1) {
+      // Move it on the page
+      this.list.insertBefore(item.nextSibling, item)
+
+      // Move it in the array
+      const nextSpell = this.spells[i + 1]
+      this.spells[i + 1] = spell
+      this.spells[i] = nextSpell
+    }
   },
 
   moveUp: function(spell, ev) {
