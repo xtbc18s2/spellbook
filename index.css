@@ -162,6 +162,11 @@ button.delete {
   color: white;
 }
 
+button.fav {
+  background-color: #F8BE3D;
+  color: black;
+}
+
 .template {
   display: none;
 }

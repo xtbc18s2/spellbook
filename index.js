@@ -31,13 +31,16 @@ const app = {
       el.setAttribute('title', spell[property])
     })
 
-    // add the delete button
+    // delete button
     item
       .querySelector('button.delete')
       .addEventListener(
         'click',
         this.removeSpell.bind(this, spell)
       )
+
+    // fav button
+
 
     return item
   },
