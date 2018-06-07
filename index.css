@@ -167,6 +167,10 @@ button.fav {
   color: black;
 }
 
+.spell.fav {
+  background-color: goldenrod;
+}
+
 .template {
   display: none;
 }
