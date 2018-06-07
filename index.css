@@ -146,7 +146,7 @@ input.small {
 
 .spell .name {
   text-decoration: underline;
-  max-width: 80%;
+  width: 80%;
   overflow-x: hidden;
   text-overflow: ellipsis;
   padding-left: 0.1em;
@@ -154,9 +154,14 @@ input.small {
 }
 .level {
   color: cornflowerblue;
+  padding: 0 0.25em;
 }
 
 button.delete {
   background-color: #ff3333;
   color: white;
+}
+
+.template {
+  display: none;
 }
