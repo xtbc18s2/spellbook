@@ -11,6 +11,13 @@ class App {
     })
   }
 
+  save() {
+    localStorage.setItem(
+      'spells',
+      JSON.stringify(this.spells)
+    )
+  }
+
   renderProperty(name, value) {
     const el = document.createElement('span')
     el.classList.add(name)
@@ -86,6 +93,8 @@ class App {
       const nextSpell = this.spells[i + 1]
       this.spells[i + 1] = spell
       this.spells[i] = nextSpell
+
+      this.save()
     }
   }
 
@@ -100,12 +109,14 @@ class App {
     // Only move it if it's not already first
     if (i > 0) {
       // Move it on the page
-    this.list.insertBefore(item, item.previousSibling)
+      this.list.insertBefore(item, item.previousSibling)
 
-    // Move it in the array
-    const previousSpell = this.spells[i - 1]
-    this.spells[i - 1] = spell
-    this.spells[i] = previousSpell
+      // Move it in the array
+      const previousSpell = this.spells[i - 1]
+      this.spells[i - 1] = spell
+      this.spells[i] = previousSpell
+
+      this.save()
     }
   }
 
@@ -113,6 +124,7 @@ class App {
     const button = ev.target
     const item = button.closest('.spell')
     spell.favorite = item.classList.toggle('fav')
+    this.save()
   }
 
   removeSpell(spell, ev) {
@@ -124,6 +136,8 @@ class App {
     // Remove from the array
     const i = this.spells.indexOf(spell)
     this.spells.splice(i, 1)
+
+    this.save()
   }
 
   handleSubmit(ev) {
@@ -136,6 +150,7 @@ class App {
     }
 
     this.spells.push(spell)
+    this.save()
 
     const item = this.renderItem(spell)
     this.list.appendChild(item)
