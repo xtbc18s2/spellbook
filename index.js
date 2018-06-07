@@ -12,6 +12,7 @@ const app = {
     const el = document.createElement('span')
     el.textContent = value
     el.classList.add(name)
+    el.setAttribute('title', value)
     return el
   },
 

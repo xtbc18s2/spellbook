@@ -150,6 +150,7 @@ input.small {
   overflow-x: hidden;
   text-overflow: ellipsis;
   padding-left: 0.1em;
+  white-space: nowrap;
 }
 .level {
   color: cornflowerblue;
