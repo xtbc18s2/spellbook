@@ -1,5 +1,7 @@
 const app = {
   init: function() {
+    this.spells = []
+
     const form = document.querySelector('form')
     form.addEventListener('submit', (ev) => {
       ev.preventDefault()
@@ -42,6 +44,8 @@ const app = {
       name: f.spellName.value,
       level: f.level.value,
     }
+
+    this.spells.push(spell)
 
     const item = this.renderItem(spell)
 
