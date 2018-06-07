@@ -156,3 +156,8 @@ input.small {
 .level {
   color: red;
 }
+
+button.delete {
+  background-color: #ff3333;
+  color: white;
+}

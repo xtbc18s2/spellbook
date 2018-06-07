@@ -34,7 +34,29 @@ const app = {
       item.appendChild(el)
     })
 
+    // add the delete button
+    const deleteButton = document.createElement('button')
+    deleteButton.classList.add('delete')
+    deleteButton.textContent = 'del'
+    deleteButton.addEventListener(
+      'click',
+      this.removeSpell.bind(this, spell)
+    )
+
+    item.appendChild(deleteButton)
+
     return item
+  },
+
+  removeSpell: function(spell, ev) {
+    // Remove from the DOM
+    const button = ev.target
+    const item = button.closest('.spell')
+    item.parentNode.removeChild(item)
+
+    // Remove from the array
+    const i = this.spells.indexOf(spell)
+    this.spells.splice(i, 1)
   },
 
   handleSubmit: function(ev) {
