@@ -1,5 +1,18 @@
 # Spellbook
 
+## Day 4 Homework
+
+* Do whatever practice is necessary to better understand the topics we've covered this week.
+* Try the official [React Tutorial](https://reactjs.org/tutorial/tutorial.html)
+
+### Bonus Credit
+
+* Continue to enhace the Spellbook project. For example, make spells editable (look up `contentEditable`).
+
+### Super Mega Bonus Credit
+
+* Have a great weekend!
+
 ## Day 3 Homework
 
 * In addition to building a list item and adding it to the DOM (as we are now), also store each spell in an array.
