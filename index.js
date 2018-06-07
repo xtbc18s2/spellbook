@@ -2,6 +2,7 @@ const app = {
   init: function() {
     this.spells = []
     this.template = document.querySelector('.spell.template')
+    this.list = document.querySelector('#spells')
 
     const form = document.querySelector('form')
     form.addEventListener('submit', (ev) => {
@@ -49,7 +50,35 @@ const app = {
         this.toggleFavorite.bind(this, spell)
       )
 
+    // move up
+    item
+      .querySelector('button.up')
+      .addEventListener(
+        'click',
+        this.moveUp.bind(this, spell)
+      )
+
     return item
+  },
+
+  moveUp: function(spell, ev) {
+    // Find the <li>
+    const button = ev.target
+    const item = button.closest('.spell')
+
+    // Find it in the array
+    const i = this.spells.indexOf(spell)
+
+    // Only move it if it's not already first
+    if (i > 0) {
+      // Move it on the page
+    this.list.insertBefore(item, item.previousSibling)
+
+    // Move it in the array
+    const previousSpell = this.spells[i - 1]
+    this.spells[i - 1] = spell
+    this.spells[i] = previousSpell
+    }
   },
 
   toggleFavorite: function(spell, ev) {
@@ -81,9 +110,7 @@ const app = {
     this.spells.push(spell)
 
     const item = this.renderItem(spell)
-
-    const list = document.querySelector('#spells')
-    list.appendChild(item)
+    this.list.appendChild(item)
 
     f.reset()
     f.spellName.focus()
